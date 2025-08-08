@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Project-specific - Generated output files
+output.json
+bc.json
+domains.json
+all_codelists.json
+
+# Configuration with sensitive data
+config.py
+.env
+*.env
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+temp/ 
