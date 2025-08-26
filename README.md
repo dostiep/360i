@@ -9,3 +9,6 @@
 * Dataset-JSON.xsl : Stylesheet that creates empty datasets shells compliant to Dataset-JSON model based on a Define.xml.
 
 * dataset.schema.json : JSON schema file to validate Dataset-JSON datasets files.
+
+* Define-Template.py : From a USDM JSON study definition, create the Define-Template.json file which can be used to create the SDTM Shell Datasets.
+    * Usage: python Define-Template.py --usdm_file <path_to_usdm_json_file>
