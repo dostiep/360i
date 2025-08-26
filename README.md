@@ -1,6 +1,9 @@
 # 360i
 
 * dataset-json.py : From a Define.xml file, create Dataset-JSON datasets shells using both Extract-list-DS.xsl and Dataset-JSON.xsl stylesheets. Compliance to Dataset-JSON is done using JSON schema file dataset.schema.json.
+    * Usage: python dataset-json.py --define_file <path_to_define> --output_dir <dataset_output_dir>
+        * --define_file is required
+        * --output_dir is required
 
 * Shells.sas : From a Define.xml file, create Dataset-JSON datasets shells using both Extract-list-DS.xsl and Dataset-JSON.xsl stylesheets. No compliance to Dataset-JSON is performed.
 
