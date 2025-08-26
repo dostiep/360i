@@ -11,4 +11,4 @@
 * dataset.schema.json : JSON schema file to validate Dataset-JSON datasets files.
 
 * Define-Template.py : From a USDM JSON study definition, create the Define-Template.json file which can be used to create the SDTM Shell Datasets.
-    * Usage: python Define-Template.py --usdm_file <path_to_usdm_json_file>
+    * Usage: python Define-Template.py --usdm_file <usdm_json_file_path> --output_template <output_template_json_file_path>
