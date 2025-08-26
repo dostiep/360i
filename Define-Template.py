@@ -10,8 +10,6 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-
-
 # Parse arguments
 parser = argparse.ArgumentParser(description="Process USDM JSON file.")
 parser.add_argument(
@@ -32,7 +30,6 @@ args = parser.parse_args()
 # Initialize CDISC Library Client
 api_key = args.cdisc_api_key if args.cdisc_api_key else os.getenv("CDISC_API_KEY")
 client = CDISCLibraryClient(api_key=api_key)
-
 
 
 # Load USDM data
