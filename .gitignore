@@ -24,6 +24,8 @@ output.json
 bc.json
 domains.json
 all_codelists.json
+Define-Template.json
+pilot_LLZT_protocol.json
 
 # Configuration with sensitive data
 config.py
