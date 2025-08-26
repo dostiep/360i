@@ -19,8 +19,14 @@ client = CDISCLibraryClient(api_key=os.getenv("CDISC_API_KEY"))
 
 
 parser = argparse.ArgumentParser(description="Process USDM JSON file.")
-parser.add_argument("--usdm_file", required=True, help="Path to USDM JSON file (required flag)")
-parser.add_argument("--output_template", required=True, help="Path to output template JSON file (required flag)")
+parser.add_argument(
+    "--usdm_file", required=True, help="Path to USDM JSON file (required flag)"
+)
+parser.add_argument(
+    "--output_template",
+    required=True,
+    help="Path to output template JSON file (required flag)",
+)
 args = parser.parse_args()
 
 # Load USDM data
