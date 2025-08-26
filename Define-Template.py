@@ -11,13 +11,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-# Initialize CDISC Library Client
-client = CDISCLibraryClient(api_key=os.getenv("CDISC_API_KEY"))
 
-
-# Parse positional argument for USDM file
-
-
+# Parse arguments
 parser = argparse.ArgumentParser(description="Process USDM JSON file.")
 parser.add_argument(
     "--usdm_file", required=True, help="Path to USDM JSON file (required flag)"
@@ -27,7 +22,18 @@ parser.add_argument(
     required=True,
     help="Path to output template JSON file (required flag)",
 )
+parser.add_argument(
+    "--cdisc_api_key",
+    required=False,
+    help="CDISC Library API Key (optional, defaults to environment variable)",
+)
 args = parser.parse_args()
+
+# Initialize CDISC Library Client
+api_key = args.cdisc_api_key if args.cdisc_api_key else os.getenv("CDISC_API_KEY")
+client = CDISCLibraryClient(api_key=api_key)
+
+
 
 # Load USDM data
 with open(args.usdm_file, "r") as file:
