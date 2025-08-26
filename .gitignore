@@ -7,6 +7,8 @@ __pycache__/
 venv/
 env/
 .venv/
+define.xml
+data/*.json
 
 # IDE
 .vscode/
