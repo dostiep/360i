@@ -17,10 +17,10 @@ client = CDISCLibraryClient(api_key=os.getenv("CDISC_API_KEY"))
 
 # Parse positional argument for USDM file
 
+
 parser = argparse.ArgumentParser(description="Process USDM JSON file.")
-parser.add_argument(
-    "--usdm_file", required=True, help="Path to USDM JSON file (required flag)"
-)
+parser.add_argument("--usdm_file", required=True, help="Path to USDM JSON file (required flag)")
+parser.add_argument("--output_template", required=True, help="Path to output template JSON file (required flag)")
 args = parser.parse_args()
 
 # Load USDM data
@@ -647,7 +647,7 @@ def save_output_files():
     """
     Saves the generated template as JSON file.
     """
-    with open("data/Define-Template.json", "w") as f:
+    with open(args.output_template, "w") as f:
         f.write(json.dumps(template, indent=4))
 
 
