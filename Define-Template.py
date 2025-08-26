@@ -1,5 +1,6 @@
 import json
 import os
+import argparse
 from jsonata import Jsonata
 from cdisc_library_client import CDISCLibraryClient
 from collections import defaultdict
@@ -14,8 +15,14 @@ load_dotenv()
 client = CDISCLibraryClient(api_key=os.getenv("CDISC_API_KEY"))
 
 
+# Parse positional argument for USDM file
+
+parser = argparse.ArgumentParser(description="Process USDM JSON file.")
+parser.add_argument("--usdm_file", required=True, help="Path to USDM JSON file (required flag)")
+args = parser.parse_args()
+
 # Load USDM data
-with open("data/CDISC_Pilot_Study.json", 'r') as file:
+with open(args.usdm_file, 'r') as file:
     usdm_data = json.load(file)
 
 
