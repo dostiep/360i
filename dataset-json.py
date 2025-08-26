@@ -49,12 +49,10 @@ for ds in executable.transform_to_string(
                 xdm_node=processor.parse_xml(xml_file_name=define_file)
             )
         )
-        # Write the generated JSON to the output directory
+        # Write the generated JSON only to the output directory
         output_path = f"{output_dir}/{ds}.json"
-        with open(output_path, "w") as out_f:
-            json.dump(json_data, out_f, indent=2)
+        with open(output_path, "w", encoding="utf-8") as out_f:
+            json.dump(json_data, out_f, indent=4, ensure_ascii=False)
         validate(json_data, schema)
-        with open(ds + ".json", "w", encoding="utf-8") as f:
-            json.dump(json_data, f, indent=4, ensure_ascii=False)
     except ValidationError as e:
         print("Validation failed:", e.message)
